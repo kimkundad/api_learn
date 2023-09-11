@@ -130,7 +130,7 @@ app.post('/index_2', upload.single('img'), (req, res) => {
 
       // Define the notification payload
       const notificationPayload = {
-        registration_ids: [ `"${registrationToken}"`],
+        registration_ids: [ `${registrationToken}` ],
         notification: {
           title: 'ข้อความจาก Learnsbuy',
           body: `"${req.body.message_in}"`,
