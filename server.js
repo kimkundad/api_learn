@@ -135,6 +135,8 @@ app.post('/index_2', upload.single('img'), (req, res) => {
         notification: {
           title: 'ข้อความจาก Learnsbuy',
           body: `"${req.body.message_in}"`,
+          icon: 'notification_icon',
+          image: 'https://learnsbuy.com/assets/image/new_logo/favicon-96x96.png'
         },
       };
 
