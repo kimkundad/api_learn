@@ -79,8 +79,9 @@ app.get("/", (req, res) => {
   const limit = req.query.limit || 10;
   const offset = (page - 1) * limit;
   console.log('get data page ', page)
+  let userID = req.query.userID;
   //const query = `SELECT * FROM messages ORDER BY created_at DESC LIMIT ${limit} OFFSET ${offset}`;
-  const query = `SELECT * FROM messages ORDER BY created_at DESC`;
+  const query = `SELECT * FROM messages WHERE chat_user_id = ${userID} OR agent_id = ${userID} ORDER BY created_at DESC`;
   connection.query(query, (error, results) => {
     if (error) {
       throw error;
