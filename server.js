@@ -51,15 +51,7 @@ const connection = mysql
   enableKeepAlive: true,
   keepAliveInitialDelay: 0
  })
-  .promise();
 
-connection.connect((err) => {
-  if (err) {
-      console.error('Error connecting to MySQL:', err);
-      return;
-  }
-  console.log('Connected to MySQL database');
-});
 
 aws.config.update({
   endpoint: config.spacesEndpoint,
